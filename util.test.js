@@ -14,6 +14,8 @@ test("should compare user's age against country age", () => {
     expect(oldEnough).toBe("I am unaware of countrydoesnotexist"); 
 }); 
 
+
+const pathTo = "oldenough/"; // replace this with the complete local-path  to the web-page (index.html) you wish to test 
 test("should create an element with paragraph containing results of user's input" , async () => { 
     const browser = await puppeteer.launch({
         headless: false, 
@@ -21,7 +23,7 @@ test("should create an element with paragraph containing results of user's input
         args: ["--window-size=1920,1080"] 
     }); 
     const page = await browser.newPage(); 
-    await page.goto("file:///C:/Users/User/webapps/react/oldenough/index.html"); 
+    await page.goto(`${pathTo}index.html`); 
 
     await page.click("input#country"); 
     await page.type("input#country", "spain");
