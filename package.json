@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "webpack-dev-server ./util.js --entry ./main.js --output-filename ./dist/bundle.js --mode development --watch",
+    "start": "webpack-dev-server ./util.js --entry ./main.js --output-filename ./dist/bundle.js --mode development",
     "test": "jest"
   },
   "author": "",
