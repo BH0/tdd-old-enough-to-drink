@@ -1,3 +1,5 @@
+const puppeteer = require("puppeteer"); 
+
 const { countries } = require("./api"); 
 const { confirmDrinkingAge } = require("./util"); 
 
@@ -11,3 +13,23 @@ test("should compare user's age against country age", () => {
     oldEnough = confirmDrinkingAge("countrydoesnotexist", 2); 
     expect(oldEnough).toBe("I am unaware of countrydoesnotexist"); 
 }); 
+
+test("should create an element with paragraph containing results of user's input" , async () => { 
+    const browser = await puppeteer.launch({
+        headless: false, 
+        slowMo: 30, 
+        args: ["--window-size=1920,1080"] 
+    }); 
+    const page = await browser.newPage(); 
+    await page.goto("file:///C:/Users/User/webapps/react/oldenough/index.html"); 
+
+    await page.click("input#country"); 
+    await page.type("input#country", "spain");
+    await page.click("input#user-age"); 
+    await page.type("input#user-age", "23");
+    await page.click("button"); 
+
+    // const finalText = await page.$eval(".result strong p", el => el.textContent); 
+    const finalText = await page.$eval("p", el => el.textContent); 
+    expect(finalText).toBe("\nyou are old enough to drink in spain"); 
+}, 15000); 

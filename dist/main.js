@@ -93,7 +93,7 @@
 /*! exports provided: countries, default */
 /***/ (function(module) {
 
-eval("module.exports = {\"countries\":{\"spain\":\"17\",\"america\":\"21\"}};\n\n//# sourceURL=webpack:///./api.json?");
+eval("module.exports = {\"countries\":{\"spain\":\"17\",\"america\":\"21\",\"uk\":\"18\"}};\n\n//# sourceURL=webpack:///./api.json?");
 
 /***/ }),
 
@@ -104,7 +104,7 @@ eval("module.exports = {\"countries\":{\"spain\":\"17\",\"america\":\"21\"}};\n\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const { countries } = __webpack_require__(/*! ./api */ \"./api.json\"); \r\nconst { confirmDrinkingAge } = __webpack_require__(/*! ./util */ \"./util.js\"); \r\n\r\n(() => { \r\n    window.onload = () => { \r\n        /// Pre-existing Elements \r\n        const countryInputEl = document.querySelector(\"#country\"); \r\n        const userAgeInputEl = document.querySelector(\"#user-age\"); \r\n        const confirmEl = document.querySelector(\"button\"); \r\n        const resultEl = document.querySelectorAll(\"result\")[\"strong\"]; \r\n\r\n        /// Elements to be created at runtime \r\n        const paragraphEl = document.createElement(\"p\"); \r\n        let output; \r\n            \r\n        confirmEl.addEventListener(\"click\", e => { \r\n            output = document.createTextNode(`\\n${confirmDrinkingAge(countryInputEl.value, userAgeInputEl.value)}`); \r\n            paragraphEl.appendChild(output);  \r\n            document.body.insertBefore(paragraphEl, resultEl); \r\n        }); \r\n    } \r\n})(); \n\n//# sourceURL=webpack:///./main.js?");
+eval("const { countries } = __webpack_require__(/*! ./api */ \"./api.json\"); \r\nconst { confirmDrinkingAge } = __webpack_require__(/*! ./util */ \"./util.js\"); \r\n\r\n(() => { \r\n    window.onload = () => { \r\n        /// Pre-existing Elements \r\n        const countryInputEl = document.querySelector(\"#country\"); \r\n        const userAgeInputEl = document.querySelector(\"#user-age\"); \r\n        const confirmEl = document.querySelector(\"button\"); \r\n        const resultEl = document.querySelectorAll(\"result\")[\"strong\"]; \r\n    \r\n        confirmEl.addEventListener(\"click\", e => { \r\n            let paragraphEl = document.createElement(\"p\"); \r\n            let output = document.createTextNode(`\\n${confirmDrinkingAge(countryInputEl.value, userAgeInputEl.value)}`); \r\n            paragraphEl.appendChild(output);  \r\n            // paragraphEl.classList.add(\"user-output\"); \r\n            document.body.insertBefore(paragraphEl, resultEl); \r\n        }); \r\n    } \r\n})(); \n\n//# sourceURL=webpack:///./main.js?");
 
 /***/ }),
 

@@ -4,16 +4,15 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "webpack util.js main.js --mode development --watch", 
+    "start": "webpack util.js main.js --mode development --watch",
     "test": "jest"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
-    "jest": "^23.6.0", 
+    "jest": "^23.6.0",
+    "puppeteer": "^1.9.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   }
