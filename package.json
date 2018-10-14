@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "webpack util.js main.js --mode development --watch",
+    "start": "webpack-dev-server ./util.js --entry ./main.js --output-filename ./dist/bundle.js --mode development --watch",
     "test": "jest"
   },
   "author": "",
@@ -12,8 +12,10 @@
   "dependencies": {},
   "devDependencies": {
     "jest": "^23.6.0",
+    "jest-webpack": "^0.5.1",
     "puppeteer": "^1.9.0",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
   }
 }
