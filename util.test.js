@@ -15,7 +15,7 @@ test("should compare user's age against country age", () => {
 }); 
 
 
-const pathTo = "oldenough/"; // replace this with the complete local-path  to the web-page (index.html) you wish to test 
+const pathTo = "file:///C:/Users/User/webapps/react/oldenough/"; // replace this with the complete local-path  to the web-page (index.html) you wish to test 
 test("should create an element with paragraph containing results of user's input" , async () => { 
     const browser = await puppeteer.launch({
         headless: false, 
@@ -24,6 +24,7 @@ test("should create an element with paragraph containing results of user's input
     }); 
     const page = await browser.newPage(); 
     await page.goto(`${pathTo}index.html`); 
+    // await page.goto(`file:///C:/Users/User/webapps/react/oldenough/index.html`); 
 
     await page.click("input#country"); 
     await page.type("input#country", "spain");
