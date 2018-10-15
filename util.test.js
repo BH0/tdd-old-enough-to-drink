@@ -23,8 +23,16 @@ test("should create an element with paragraph containing results of user's input
         args: ['--window-size=1920,1080', '--no-sandbox', '--disable-setuid-sandbox'] 
     }); 
     const page = await browser.newPage(); 
-    // await page.goto(`${__dirname}/index.html`); 
-    await page.goto(`file:///home/circleci/repo/index.html`); 
+
+    try {
+        console.log(`trying to find file at ${__dirname} (local / non-linux)`); 
+        await page.goto(`${__dirname}/index.html`); 
+    }
+    catch(error) {
+        console.log(`trying to find file at file:///home/circleci/repo/ (circleci / linux)`); 
+        await page.goto(`file:///home/circleci/repo/index.html`); 
+    }
+        
     
     // await page.goto(`file:///C:/Users/User/webapps/react/oldenough/index.html`); 
 
