@@ -23,7 +23,8 @@ test("should create an element with paragraph containing results of user's input
         args: ['--window-size=1920,1080', '--no-sandbox', '--disable-setuid-sandbox'] 
     }); 
     const page = await browser.newPage(); 
-    await page.goto(`${__dirname}/index.html`); 
+    // await page.goto(`${__dirname}/index.html`); 
+    console.log(`$__dirname`); 
     // await page.goto(`file:///C:/Users/User/webapps/react/oldenough/index.html`); 
 
     await page.click("input#country"); 
