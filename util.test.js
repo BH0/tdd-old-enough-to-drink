@@ -20,7 +20,7 @@ test("should create an element with paragraph containing results of user's input
     const browser = await puppeteer.launch({
         headless: false, 
         slowMo: 30, 
-        args: ["--window-size=1920,1080"] 
+        args: ['--window-size=1920,1080', '--no-sandbox', '--disable-setuid-sandbox'] 
     }); 
     const page = await browser.newPage(); 
     await page.goto(`${__dirname}/index.html`); 
