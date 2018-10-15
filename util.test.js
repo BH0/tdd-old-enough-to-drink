@@ -45,4 +45,7 @@ test("should create an element with paragraph containing results of user's input
     // const finalText = await page.$eval(".result strong p", el => el.textContent); 
     const finalText = await page.$eval("p", el => el.textContent); 
     expect(finalText).toBe("\nyou are old enough to drink in spain"); 
+
+    await page.close();
+    await browser.close(); 
 }, 15000); 
