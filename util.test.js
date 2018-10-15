@@ -24,7 +24,7 @@ test("should create an element with paragraph containing results of user's input
     }); 
     const page = await browser.newPage(); 
     // await page.goto(`${__dirname}/index.html`); 
-    await page.goto(`file:///C:/home/circleci/repo/index.html`); 
+    await page.goto(`file:///home/circleci/repo/index.html`); 
     
     // await page.goto(`file:///C:/Users/User/webapps/react/oldenough/index.html`); 
 
